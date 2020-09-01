@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		092FA8D524FC108700F24C58 /* UtilityViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FA8D424FC108700F24C58 /* UtilityViews.swift */; };
 		092FA8D724FC10C300F24C58 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FA8D624FC10C300F24C58 /* ImageLoader.swift */; };
-		092FA8DA24FC11EC00F24C58 /* SwiftlySearch in Frameworks */ = {isa = PBXBuildFile; productRef = 092FA8D924FC11EC00F24C58 /* SwiftlySearch */; };
 		092FA8DC24FC162600F24C58 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FA8DB24FC162500F24C58 /* ActivityIndicator.swift */; };
 		09C0F70024FBF47500CB0C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0F6FF24FBF47500CB0C09 /* AppDelegate.swift */; };
 		09C0F70224FBF47500CB0C09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0F70124FBF47500CB0C09 /* SceneDelegate.swift */; };
@@ -56,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				092FA8DA24FC11EC00F24C58 /* SwiftlySearch in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +160,6 @@
 			);
 			name = Best_Buy_Product_Search;
 			packageProductDependencies = (
-				092FA8D924FC11EC00F24C58 /* SwiftlySearch */,
 			);
 			productName = Best_Buy_Product_Search;
 			productReference = 09C0F6FC24FBF47500CB0C09 /* Best Buy Search.app */;
@@ -193,7 +190,6 @@
 			);
 			mainGroup = 09C0F6F324FBF47500CB0C09;
 			packageReferences = (
-				092FA8D824FC11EC00F24C58 /* XCRemoteSwiftPackageReference "SwiftlySearch" */,
 			);
 			productRefGroup = 09C0F6FD24FBF47500CB0C09 /* Products */;
 			projectDirPath = "";
@@ -432,25 +428,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		092FA8D824FC11EC00F24C58 /* XCRemoteSwiftPackageReference "SwiftlySearch" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/thislooksfun/SwiftlySearch.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		092FA8D924FC11EC00F24C58 /* SwiftlySearch */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 092FA8D824FC11EC00F24C58 /* XCRemoteSwiftPackageReference "SwiftlySearch" */;
-			productName = SwiftlySearch;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09C0F6F424FBF47500CB0C09 /* Project object */;
 }

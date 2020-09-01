@@ -40,41 +40,40 @@ struct SearchView: View {
 
     private var resetButton: some View {
         Button(action: viewModel.reset, label: {
-            Text("Start Over").bold()
-                .frame(maxWidth: .infinity, maxHeight: 45)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .padding(20)
+            Image(systemName: "xmark.circle.fill")
         })
-        .shadow(radius: 1)
+    }
+
+    private var searchField: some View {
+        TextField(
+            "Search...",
+            text: $viewModel.keywords,
+            onCommit: viewModel.search)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding(.horizontal)
+            .overlay(HStack {
+                Spacer()
+                if !viewModel.keywords.isEmpty {
+                    resetButton
+                }
+            }.padding(.trailing, 30))
     }
 
     var body: some View {
-        Group {
-            ZStack {
-                if viewModel.searching {
-                    ActivityIndicator(label: "Searching", style: .medium, axis: .vertical)
-                } else if !viewModel.results.isEmpty {
-                    ResultsView(results: viewModel.results)
-                } else {
-                    suggestionsList
-                }
+        VStack(spacing: 0) {
+            searchField
+            
+            Divider().padding(.top, 15)
 
-                if !viewModel.results.isEmpty {
-                    VStack {
-                        Spacer()
-                        resetButton
-                    }
-                }
+            if viewModel.searching {
+                ActivityIndicator(label: "Searching", style: .medium, axis: .vertical)
+            } else if !viewModel.results.isEmpty {
+                ResultsView(results: viewModel.results)
+            } else {
+                suggestionsList
             }
         }
-        .navigationBarSearch(
-            $viewModel.keywords,
-            placeholder: "Search...",
-            hidesSearchBarWhenScrolling: false,
-            cancelClicked: viewModel.reset,
-            searchClicked: viewModel.search)
+        .navigationBarTitle("Search", displayMode: .inline)
     }
 
     private func onTagTap(_ text: String) {

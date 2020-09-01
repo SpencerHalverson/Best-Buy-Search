@@ -29,6 +29,8 @@ extension UINavigationController {
         standardAppearance.backgroundColor = .white
         standardAppearance.shadowColor = .lightGray
         standardAppearance.configureWithOpaqueBackground()
+        standardAppearance.shadowImage = nil
+        standardAppearance.shadowColor = .clear
 
         navigationBar.standardAppearance = standardAppearance
 
